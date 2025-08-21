@@ -1,11 +1,10 @@
 import React from 'react'
+import DashboardLayout from '../../components/layouts/DashboardLayout'
 
-function ManageTasks() {
-  return (
-    <div>
+const ManageTasks = () => {
+  return <DashboardLayout activeMenu="Manage Tasks">Manage Tasks</DashboardLayout>
       
-    </div>
-  )
+
 }
 
 export default ManageTasks
