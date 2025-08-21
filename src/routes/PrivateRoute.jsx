@@ -1,8 +1,21 @@
-import React from 'react'
-import { Outlet } from 'react-router-dom'
+import React, { useContext } from "react";
+import { Navigate, Outlet } from "react-router-dom";
+import { UserContext } from "../context/userContext";
 
-const PrivateRoute = ({allowedRoles}) => {
-  return <Outlet/>
-}
+const PrivateRoute = ({ allowedRoles }) => {
+  const { user, loading } = useContext(UserContext);
 
-export default PrivateRoute
+  if (loading) return <p>Loading...</p>; // ya spinner laga lo
+
+  if (!user) {
+    return <Navigate to="/login" />;
+  }
+
+  if (allowedRoles && !allowedRoles.includes(user.role)) {
+    return <Navigate to="/" />;
+  }
+
+  return <Outlet />;
+};
+
+export default PrivateRoute;
