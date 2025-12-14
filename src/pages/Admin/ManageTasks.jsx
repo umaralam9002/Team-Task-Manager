@@ -30,9 +30,9 @@ const ManageTasks = () => {
 
       const statusArray = [
         { label: "All", count: statusSummary.all || 0 },
-        { label: "To Do", count: statusSummary.todo || 0 },
-        { label: "In Progress", count: statusSummary.inprogress || 0 },
-        { label: "Completed", count: statusSummary.completed || 0 },
+        { label: "Pending", count: statusSummary.pendingTasks || 0 },
+        { label: "In Progress", count: statusSummary.inProgressTasks || 0 },
+        { label: "Completed", count: statusSummary.completedTasks || 0 },
       ];
         setTabs(statusArray);
     } catch (error) {
