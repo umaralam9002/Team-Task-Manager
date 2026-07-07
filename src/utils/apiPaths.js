@@ -1,4 +1,6 @@
-export const BASE_URL = "http://localhost:8000";
+// export const BASE_URL = "http://localhost:8000";
+export const BASE_URL = "https://taskflow-backend-apgt.onrender.com";
+
 
 // utils/apiPaths.js
 export const API_PATHS = {
